@@ -1,0 +1,88 @@
+< ? version xml = " 1.0 " encodage = " UTF-8 " ?>
+< projet  xmlns = " http://maven.apache.org/POM/4.0.0 "  xmlns : xsi = " http://www.w3.org/2001/XMLSchema-instance "
+	xsi:schemaLocation= " http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd " >
+	< modelVersion >4.0.0</ modelVersion >
+	< parent >
+		< groupId >org.springframework.boot</ groupId >
+		< artefactId >spring-boot-starter-parent</ artefactId >
+		< version >2.5.3</ version >
+		< cheminrelatif /> <!-- rechercher le parent à partir du référentiel -->
+	</ parent >
+	< groupId >tn.esprit.rh</ groupId >
+	< artefactId >achat</ artefactId >
+	< version >1.0</ version >
+	< nom >achat</ nom >
+	< description >Projet pour le module DevOps</ description >
+	< propriétés >
+		< java .version>1.8</ java .version>
+		< maven-jar-plugin .version>3.1.1</ maven-jar-plugin .version>
+	</ propriétés >
+	< dépendances >
+		< dépendance >
+			< groupId >org.springframework.boot</ groupId >
+			< artefactId >spring-boot-starter-data-jpa</ artefactId >
+		</ dépendance >
+		< dépendance >
+			< groupId >org.springframework.boot</ groupId >
+			< artefactId >spring-boot-starter-web</ artefactId >
+		</ dépendance >
+
+		< dépendance >
+			< groupId >mysql</ groupId >
+			< artefactId >mysql-connector-java</ artefactId >
+			< portée >exécution</ portée >
+		</ dépendance >
+		< dépendance >
+			< groupId >org.projectlombok</ groupId >
+			< artefactId >lombok</ artefactId >
+			< facultatif >vrai</ facultatif >
+		</ dépendance >
+		< dépendance >
+			< groupId >org.springframework.boot</ groupId >
+			< artefactId >spring-boot-starter-test</ artefactId >
+			< portée >tester</ portée >
+		</ dépendance >
+
+		< dépendance >
+			< groupId >io.springfox</ groupId >
+			< artefactId >springfox-boot-starter</ artefactId >
+			< version >3.0.0</ version >
+		</ dépendance >
+		< dépendance >
+			< groupId >io.springfox</ groupId >
+			< artefactId >springfox-swagger-ui</ artefactId >
+			< version >3.0.0</ version >
+		</ dépendance >
+
+	</ dépendances >
+
+	< construire >
+		< plugins >
+			< plugin >
+				< groupId >org.springframework.boot</ groupId >
+				< artefactId >spring-boot-maven-plugin</ artefactId >
+				< configuration >
+					< exclut >
+						< exclure >
+							< groupId >org.projectlombok</ groupId >
+							< artefactId >lombok</ artefactId >
+						</ exclure >
+					</ exclut >
+				</ configuration >
+			</ plugin >
+			< plugin >
+                                < groupId >org.apache.maven.plugins</ groupId >
+                                < artefactId >maven-resources-plugin</ artefactId >
+                                < version >3.1.0</ version >
+			</ plugin >
+		</ plugins >
+	</ construire >
+	< gestion de la distribution >
+		< référentiel >
+			< id >deploymentRepo</ id >
+			< nom >Référentiel Nexus</ nom >
+			< url >http://192.168.1.8:8081/repository/maven-releases/</ url >
+		</ dépôt >
+	</ gestion de la distribution >
+
+</ projet >
