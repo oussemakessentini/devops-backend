@@ -30,9 +30,18 @@ services:
           }'
     networks:
       - backend-net
+      - frontend-net
 
 
-  
+  app_achat_front :
+    image : mariem99/achat_front
+    ports:
+      - 80:80
+    depends_on :
+      - app_achat_back
+    restart : on-failure
+    networks :
+      - frontend-net
 networks:
   backend-net :
-
+  frontend-net :
